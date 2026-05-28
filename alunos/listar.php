@@ -2,7 +2,7 @@
 require_once '../config/database.php';
 
 $pdo   = getConnection();
-$stmt  = $pdo->query('SELECT * FROM alunos ORDER BY nome');
+$stmt  = $pdo->query('SELECT * FROM alunos WHERE ativo = TRUE ORDER BY nome');
 $alunos = $stmt->fetchAll();
 ?>
 
