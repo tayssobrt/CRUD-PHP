@@ -38,9 +38,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <h1>Alterar Aluno: <?php echo $aluno['nome'] ?></h1>
 
-    <input name="cpf"   value="<?= $aluno['cpf'] ?>"   required>
+    <input name="cpf" id="cpf"  value="<?= $aluno['cpf'] ?>"   required>
     <input name="nome"  value="<?= $aluno['nome'] ?>"  required>
     <input name="turma" value="<?= $aluno['turma'] ?>" required>
     <button type="submit">Atualizar</button>
 </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script>
+    $('#cpf').mask('000.000.000-00');
+</script>
+    
 </body>
