@@ -25,6 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Aluno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <form method="POST">
 
     <h1>Alterar Aluno: <?php echo $aluno['nome'] ?></h1>
@@ -34,3 +43,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input name="turma" value="<?= $aluno['turma'] ?>" required>
     <button type="submit">Atualizar</button>
 </form>
+</body>

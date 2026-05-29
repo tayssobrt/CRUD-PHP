@@ -28,6 +28,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <p style="color:red"><?= $erro ?></p>
 <?php endif; ?>
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Aluno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <form method="POST">
     <input name="cpf"   placeholder="CPF" required>
     <input name="nome"  placeholder="Nome" required>
@@ -40,3 +49,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <script>
     $('#cpf').mask('000.000.000-00');
 </script>
+</body>
