@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <body>
 
 <form method="POST">
-    <input name="cpf"   placeholder="CPF" required>
+    <input name="cpf" id="cpf" placeholder="CPF" required>
     <input name="nome"  placeholder="Nome" required>
     <input name="turma" placeholder="Turma" required>
     <button type="submit">Salvar</button>
