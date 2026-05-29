@@ -4,9 +4,14 @@ require_once '../config/database.php';
 $pdo   = getConnection();
 $stmt  = $pdo->query('SELECT * FROM alunos WHERE ativo = TRUE ORDER BY nome');
 $alunos = $stmt->fetchAll();
-?>
 
-<table>
+
+if (empty($alunos)) {
+    echo '<p>Nenhum aluno encontrado.</p>';
+    echo '<a href="cadastro.php">Novo aluno</a>';
+    exit;
+}
+?>
     <tr><th>CPF</th><th>Nome</th><th>Turma</th><th>Ações</th></tr>
     <?php foreach ($alunos as $aluno): ?>
         <tr>
