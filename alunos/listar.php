@@ -10,7 +10,7 @@ $alunos = $stmt->fetchAll();
     <tr><th>CPF</th><th>Nome</th><th>Turma</th><th>Ações</th></tr>
     <?php foreach ($alunos as $aluno): ?>
         <tr>
-            <td><?= htmlspecialchars($aluno['cpf']) ?></td>
+            <td><?= htmlspecialchars(formatarCpf($aluno['cpf'])) ?></td>
             <td><?= htmlspecialchars($aluno['nome']) ?></td>
             <td><?= htmlspecialchars($aluno['turma']) ?></td>
             <td>
@@ -21,3 +21,11 @@ $alunos = $stmt->fetchAll();
     <?php endforeach; ?>
 </table>
 <a href="cadastro.php">Novo aluno</a>
+
+<?php
+function formatarCpf(string $cpf): string {
+return substr($cpf, 0, 3) . '.' .
+substr($cpf, 3, 3) . '.' .
+substr($cpf, 6, 3) . '-' .
+substr($cpf, 9, 2);
+}
